@@ -19,14 +19,12 @@ for i in range(2, secretNumber):
     if (secretNumber % i) == 0:
         clues[1].append(i)
 clues[2] = (len(clues[1]) == 0)
-print(secretNumber)
-print(clues[2])
 
 def giveAClue(guessF):
     while True:
         option = random.randrange(0,3)
         if option == 0:
-            if len(clues[0]) > 0:            
+            if len(clues[0]) > 0:
                 multiple = clues[0].pop(random.randrange(0, len(clues[0])))
                 print('I´ll give you a clue:', multiple, 'is a multiple of the secret number')
                 break
@@ -38,7 +36,7 @@ def giveAClue(guessF):
                 clues[2] = False
                 break
             else:
-                if len(clues[1]) > 0:            
+                if len(clues[1]) > 0:
                     divisible = clues[1].pop(random.randrange(0, len(clues[1])))
                     print('I´ll give you a clue: the secret number is divisible by', divisible)
                     break
